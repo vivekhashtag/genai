@@ -4090,6 +4090,122 @@ export default function Module2() {
           </section>
         </div>
 
+        {/* ═══════ LATEST ADVANCEMENTS ═══════ */}
+        <section className="mb-16 mt-16">
+          <div className="mb-8 flex items-center gap-4">
+            <div className="rounded-full bg-gradient-to-r from-blue-600 to-cyan-500 px-5 py-1.5 text-xs font-bold text-white shadow-lg">2025 – 2026 Updates</div>
+            <h2 className="text-3xl font-bold text-gray-900 dark:text-white">Latest Advancements in Prompt Engineering</h2>
+          </div>
+          <div className="rounded-3xl border-2 border-blue-200 bg-gradient-to-br from-blue-50 to-cyan-50 p-8 shadow-xl dark:border-blue-700/50 dark:from-blue-950/30 dark:to-cyan-950/30">
+            <p className="mb-8 text-gray-700 dark:text-gray-300">Prompt engineering is evolving fast. Reasoning models have changed the paradigm entirely, and new platform features reward engineers who think about the full context window — not just the prompt.</p>
+
+            {/* Reasoning Model Prompting */}
+            <div className="mb-8 rounded-2xl border border-blue-200 bg-white p-6 shadow-sm dark:border-blue-700/40 dark:bg-gray-800">
+              <div className="mb-4 flex items-center gap-3">
+                <span className="rounded-full bg-blue-600 px-3 py-1 text-xs font-bold text-white">Paradigm Shift</span>
+                <h3 className="text-xl font-bold text-blue-700 dark:text-blue-400">Reasoning Model Prompting — A New Paradigm</h3>
+              </div>
+              <p className="mb-4 text-gray-700 dark:text-gray-300">With <strong>o3, o4-mini, DeepSeek-R1, and Claude Extended Thinking</strong>, the rules of prompt engineering change fundamentally. These models reason internally — over-prompting them actually hurts performance.</p>
+              <div className="mb-4 grid gap-4 md:grid-cols-2">
+                <div className="rounded-xl bg-red-50 border border-red-200 p-4 dark:bg-red-900/20 dark:border-red-700/40">
+                  <div className="mb-2 font-bold text-red-700 dark:text-red-400 text-sm">Old paradigm (GPT-4, standard models)</div>
+                  <ul className="space-y-1 text-xs text-gray-600 dark:text-gray-400">
+                    <li>• Use Chain-of-Thought: "Think step by step"</li>
+                    <li>• Explicit instructions for each reasoning step</li>
+                    <li>• Long, detailed system prompts</li>
+                    <li>• One-shot examples to guide reasoning path</li>
+                  </ul>
+                </div>
+                <div className="rounded-xl bg-green-50 border border-green-200 p-4 dark:bg-green-900/20 dark:border-green-700/40">
+                  <div className="mb-2 font-bold text-green-700 dark:text-green-400 text-sm">New paradigm (Reasoning models)</div>
+                  <ul className="space-y-1 text-xs text-gray-600 dark:text-gray-400">
+                    <li>• State the goal + constraints only</li>
+                    <li>• Don't tell it HOW to think — it figures that out</li>
+                    <li>• Shorter, cleaner prompts outperform long ones</li>
+                    <li>• Use developer/user message, not long system prompts</li>
+                  </ul>
+                </div>
+              </div>
+              <div className="rounded-xl bg-amber-50 border border-amber-200 p-4 dark:bg-amber-900/20 dark:border-amber-700/40">
+                <p className="font-semibold text-amber-800 dark:text-amber-300 text-sm mb-1">Finance Example</p>
+                <p className="text-xs text-amber-900 dark:text-amber-200">Old: "Analyse this balance sheet. First, calculate the current ratio. Then check the debt-to-equity ratio. Then..." — New: "You are a credit analyst. Review this balance sheet and identify any covenant risks for a $50M revolving credit facility. Be precise." The reasoning model works out the analysis steps itself.</p>
+              </div>
+            </div>
+
+            {/* Prompt Caching */}
+            <div className="mb-8 rounded-2xl border border-blue-200 bg-white p-6 shadow-sm dark:border-blue-700/40 dark:bg-gray-800">
+              <div className="mb-4 flex items-center gap-3">
+                <span className="rounded-full bg-cyan-600 px-3 py-1 text-xs font-bold text-white">Cost Saver</span>
+                <h3 className="text-xl font-bold text-blue-700 dark:text-blue-400">Prompt Caching — Up to 90% Cost Reduction</h3>
+              </div>
+              <p className="mb-4 text-gray-700 dark:text-gray-300">Both Anthropic and OpenAI now support caching frequently repeated prompt prefixes. If you have a long system prompt or reference documents that stay the same across requests, you pay only once.</p>
+              <div className="mb-4 grid gap-4 md:grid-cols-2">
+                {[
+                  { provider: "Anthropic (Claude)", savings: "90% cost reduction on cached tokens. Cache lasts 5 minutes (extended with TTL). Minimum 1,024 tokens to cache." },
+                  { provider: "OpenAI", savings: "50% discount on cached input tokens. Automatic — no code change needed. Cache hits shown in API response." },
+                ].map((p) => (
+                  <div key={p.provider} className="rounded-xl bg-cyan-50 p-4 dark:bg-cyan-900/20">
+                    <div className="mb-1 font-bold text-cyan-700 dark:text-cyan-400 text-sm">{p.provider}</div>
+                    <p className="text-xs text-gray-600 dark:text-gray-400">{p.savings}</p>
+                  </div>
+                ))}
+              </div>
+              <div className="rounded-xl bg-blue-50 p-4 dark:bg-blue-900/20">
+                <p className="font-semibold text-blue-800 dark:text-blue-300 text-sm mb-1">Finance Use Cases</p>
+                <ul className="space-y-1 text-xs text-blue-900 dark:text-blue-200">
+                  <li>• Cache your entire regulatory rulebook (SEBI circular, RBI master direction) — all user queries share one cached copy</li>
+                  <li>• Cache client profile + portfolio data for an advisory session — all turns in the conversation share it</li>
+                  <li>• Cache your company's compliance policy — every compliance check re-uses it without re-sending</li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Structured Outputs + Context Engineering */}
+            <div className="grid gap-6 md:grid-cols-2 mb-8">
+              <div className="rounded-2xl border border-blue-200 bg-white p-6 shadow-sm dark:border-blue-700/40 dark:bg-gray-800">
+                <h3 className="mb-3 text-lg font-bold text-blue-700 dark:text-blue-400">Structured Outputs — Schema Enforcement</h3>
+                <p className="mb-3 text-sm text-gray-700 dark:text-gray-300">OpenAI and Anthropic now support <strong>guaranteed JSON output</strong> matching a schema you define — no more regex parsing or retry loops.</p>
+                <ul className="space-y-1 text-xs text-gray-600 dark:text-gray-400">
+                  <li className="flex gap-2"><span className="text-blue-500 font-bold">•</span>OpenAI Structured Outputs: pass a Pydantic/JSON schema, get back a validated object</li>
+                  <li className="flex gap-2"><span className="text-blue-500 font-bold">•</span>Anthropic tool use: define a "tool" whose input schema is your output format</li>
+                  <li className="flex gap-2"><span className="text-blue-500 font-bold">•</span>Finance: extract financial metrics from reports with guaranteed field names and types</li>
+                  <li className="flex gap-2"><span className="text-blue-500 font-bold">•</span>Zero parsing failures in production pipelines</li>
+                </ul>
+              </div>
+              <div className="rounded-2xl border border-blue-200 bg-white p-6 shadow-sm dark:border-blue-700/40 dark:bg-gray-800">
+                <h3 className="mb-3 text-lg font-bold text-blue-700 dark:text-blue-400">Context Engineering 2.0</h3>
+                <p className="mb-3 text-sm text-gray-700 dark:text-gray-300">"Context engineering" is becoming the dominant term — because <em>what you put in the context window</em> matters more than the prompt wording.</p>
+                <ul className="space-y-1 text-xs text-gray-600 dark:text-gray-400">
+                  <li className="flex gap-2"><span className="text-cyan-500 font-bold">•</span><strong>Memory:</strong> relevant conversation history and past decisions</li>
+                  <li className="flex gap-2"><span className="text-cyan-500 font-bold">•</span><strong>Tools:</strong> what the model can do shapes what it tries</li>
+                  <li className="flex gap-2"><span className="text-cyan-500 font-bold">•</span><strong>Retrieved docs:</strong> right chunks at the right time</li>
+                  <li className="flex gap-2"><span className="text-cyan-500 font-bold">•</span><strong>Examples:</strong> few-shot examples chosen dynamically, not hardcoded</li>
+                  <li className="flex gap-2"><span className="text-cyan-500 font-bold">•</span>The model's behaviour is determined by the context, not just the instruction</li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Multimodal Prompting */}
+            <div className="rounded-2xl border border-blue-200 bg-white p-6 shadow-sm dark:border-blue-700/40 dark:bg-gray-800">
+              <h3 className="mb-3 text-lg font-bold text-blue-700 dark:text-blue-400">Multimodal Prompting in Finance</h3>
+              <p className="mb-3 text-sm text-gray-700 dark:text-gray-300">With GPT-4o and Gemini 2.x, you can pass images directly in the prompt. This unlocks entirely new workflows in financial services.</p>
+              <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+                {[
+                  { use: "Earnings Slides", desc: "Upload a slide deck; ask the model to extract guidance, key metrics, and management tone." },
+                  { use: "Scanned Agreements", desc: "Photograph a signed loan agreement; extract key clauses, dates, parties." },
+                  { use: "Portfolio Charts", desc: "Pass a performance chart; ask for trend analysis or anomaly detection." },
+                  { use: "Handwritten Notes", desc: "Advisor call notes in handwriting; transcribe and summarise into CRM format." },
+                ].map((u) => (
+                  <div key={u.use} className="rounded-xl bg-blue-50 p-3 dark:bg-blue-900/20">
+                    <div className="font-bold text-blue-700 dark:text-blue-400 text-xs mb-1">{u.use}</div>
+                    <p className="text-xs text-gray-600 dark:text-gray-400">{u.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Navigation Footer */}
         <div className="mt-16 flex items-center justify-between rounded-3xl border border-gray-200/50 bg-white/60 p-8 backdrop-blur-sm dark:border-gray-700/50 dark:bg-gray-800/60">
           <a

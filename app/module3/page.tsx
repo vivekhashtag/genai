@@ -5812,6 +5812,106 @@ scores = json.loads(evaluation)`}
             </div>
           </section>
 
+          {/* ═══════ LATEST ADVANCEMENTS ═══════ */}
+          <section className="mb-16 mt-16">
+            <div className="mb-8 flex items-center gap-4">
+              <div className="rounded-full bg-gradient-to-r from-green-600 to-emerald-500 px-5 py-1.5 text-xs font-bold text-white shadow-lg">2025 – 2026 Updates</div>
+              <h2 className="text-3xl font-bold text-gray-900 dark:text-white">Latest Advancements in Embeddings & RAG</h2>
+            </div>
+            <div className="rounded-3xl border-2 border-green-200 bg-gradient-to-br from-green-50 to-emerald-50 p-8 shadow-xl dark:border-green-700/50 dark:from-green-950/30 dark:to-emerald-950/30">
+              <p className="mb-8 text-gray-700 dark:text-gray-300">RAG has evolved from a simple retrieve-and-generate pattern into a sophisticated, agent-driven knowledge architecture. Here is what has changed.</p>
+
+              {/* GraphRAG */}
+              <div className="mb-8 rounded-2xl border border-green-200 bg-white p-6 shadow-sm dark:border-green-700/40 dark:bg-gray-800">
+                <div className="mb-4 flex items-center gap-3">
+                  <span className="rounded-full bg-green-600 px-3 py-1 text-xs font-bold text-white">Microsoft Research 2024</span>
+                  <h3 className="text-xl font-bold text-green-700 dark:text-green-400">GraphRAG — Beyond Chunk Retrieval</h3>
+                </div>
+                <p className="mb-4 text-gray-700 dark:text-gray-300">Traditional RAG retrieves the most semantically similar chunks. GraphRAG first builds a <strong>knowledge graph</strong> from your documents (entities, relationships, communities), then uses that graph to answer questions — especially multi-hop questions that span many documents.</p>
+                <div className="mb-4 grid gap-4 md:grid-cols-2">
+                  <div className="rounded-xl bg-red-50 border border-red-200 p-4 dark:bg-red-900/20 dark:border-red-700/40">
+                    <div className="font-bold text-red-700 dark:text-red-400 text-sm mb-2">Naive RAG fails at:</div>
+                    <ul className="space-y-1 text-xs text-gray-600 dark:text-gray-400">
+                      <li>• "What is the exposure of Firm A to all entities that have defaulted in the last 3 quarters?"</li>
+                      <li>• "Summarise all the risks mentioned across all 500 client reports"</li>
+                      <li>• Questions requiring synthesis across many documents</li>
+                    </ul>
+                  </div>
+                  <div className="rounded-xl bg-green-50 border border-green-200 p-4 dark:bg-green-900/20 dark:border-green-700/40">
+                    <div className="font-bold text-green-700 dark:text-green-400 text-sm mb-2">GraphRAG handles:</div>
+                    <ul className="space-y-1 text-xs text-gray-600 dark:text-gray-400">
+                      <li>• Multi-hop reasoning across documents</li>
+                      <li>• Global summaries over large corpora</li>
+                      <li>• Relationship queries (who is connected to whom)</li>
+                      <li>• Community detection (thematic clusters)</li>
+                    </ul>
+                  </div>
+                </div>
+                <p className="text-xs text-gray-600 dark:text-gray-400"><strong>Finance use:</strong> regulatory knowledge graphs (which rule connects to which entity), counterparty risk networks, M&A target relationship mapping, compliance obligation graphs across jurisdictions.</p>
+              </div>
+
+              {/* Multimodal RAG / ColPali */}
+              <div className="mb-8 rounded-2xl border border-green-200 bg-white p-6 shadow-sm dark:border-green-700/40 dark:bg-gray-800">
+                <div className="mb-4 flex items-center gap-3">
+                  <span className="rounded-full bg-emerald-600 px-3 py-1 text-xs font-bold text-white">2024 Breakthrough</span>
+                  <h3 className="text-xl font-bold text-green-700 dark:text-green-400">ColPali — Multimodal RAG on Visual Documents</h3>
+                </div>
+                <p className="mb-4 text-gray-700 dark:text-gray-300">Traditional RAG on PDFs: convert to text (OCR), chunk the text, embed the text. <strong>ColPali</strong> embeds the visual page directly as an image — no OCR, no text extraction. Complex tables, charts, and layouts are preserved perfectly.</p>
+                <div className="grid gap-4 md:grid-cols-3">
+                  {[
+                    { label: "Traditional pipeline", steps: "PDF → OCR → text chunks → text embeddings → search" },
+                    { label: "ColPali pipeline", steps: "PDF → page images → vision-language embeddings → search" },
+                    { label: "Finance advantage", steps: "Earnings slides, regulatory tables, fund factsheets — no data lost in OCR errors" },
+                  ].map((c) => (
+                    <div key={c.label} className="rounded-xl bg-emerald-50 p-4 dark:bg-emerald-900/20">
+                      <div className="font-bold text-emerald-700 dark:text-emerald-400 text-xs mb-1">{c.label}</div>
+                      <p className="text-xs text-gray-600 dark:text-gray-400">{c.steps}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Agentic RAG + Long Context */}
+              <div className="mb-8 grid gap-6 md:grid-cols-2">
+                <div className="rounded-2xl border border-green-200 bg-white p-6 shadow-sm dark:border-green-700/40 dark:bg-gray-800">
+                  <h3 className="mb-3 text-lg font-bold text-green-700 dark:text-green-400">Agentic RAG</h3>
+                  <p className="mb-3 text-sm text-gray-700 dark:text-gray-300">Instead of one fixed retrieval step, an agent decides the retrieval strategy dynamically — and can retrieve multiple times.</p>
+                  <div className="space-y-2 text-xs text-gray-600 dark:text-gray-400">
+                    <div className="rounded-lg bg-green-50 p-2 dark:bg-green-900/20"><strong>Query rewriting:</strong> agent improves the search query before retrieving</div>
+                    <div className="rounded-lg bg-green-50 p-2 dark:bg-green-900/20"><strong>Iterative retrieval:</strong> retrieve → read → "I need more on X" → retrieve again</div>
+                    <div className="rounded-lg bg-green-50 p-2 dark:bg-green-900/20"><strong>Multi-source:</strong> search vector DB + web + structured DB in one task</div>
+                    <div className="rounded-lg bg-green-50 p-2 dark:bg-green-900/20"><strong>Self-verification:</strong> agent checks its own answer against the sources</div>
+                  </div>
+                </div>
+                <div className="rounded-2xl border border-green-200 bg-white p-6 shadow-sm dark:border-green-700/40 dark:bg-gray-800">
+                  <h3 className="mb-3 text-lg font-bold text-green-700 dark:text-green-400">Long Context vs RAG</h3>
+                  <p className="mb-3 text-sm text-gray-700 dark:text-gray-300">With 1M token windows, sometimes you don't need RAG. When to use which:</p>
+                  <div className="space-y-2 text-xs">
+                    <div className="rounded-lg bg-blue-50 p-2 dark:bg-blue-900/20 text-gray-700 dark:text-gray-300"><strong>Use Long Context:</strong> single large document, no access control needed, small number of requests, accuracy is paramount</div>
+                    <div className="rounded-lg bg-green-50 p-2 dark:bg-green-900/20 text-gray-700 dark:text-gray-300"><strong>Use RAG:</strong> large corpus (1000s of docs), cost at scale, freshness/updates needed, permission-based filtering required</div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Reranking + Hybrid */}
+              <div className="rounded-2xl border border-green-200 bg-white p-6 shadow-sm dark:border-green-700/40 dark:bg-gray-800">
+                <h3 className="mb-3 text-lg font-bold text-green-700 dark:text-green-400">Hybrid Search + Reranking — Now Standard</h3>
+                <div className="grid gap-4 md:grid-cols-2">
+                  <div>
+                    <p className="text-sm font-semibold text-gray-900 dark:text-white mb-2">Hybrid Search</p>
+                    <p className="text-xs text-gray-600 dark:text-gray-400 mb-2">Sparse (BM25/keyword) + Dense (vector) retrieval always outperforms either alone. Most vector databases now support this natively — Pinecone, Weaviate, Azure AI Search, pgvector all have hybrid search APIs. Use Reciprocal Rank Fusion (RRF) to merge results.</p>
+                    <div className="rounded-lg bg-green-50 p-2 dark:bg-green-900/20 text-xs text-green-800 dark:text-green-300">Finance: hybrid search handles both exact ticker/ISIN lookups (keyword) and semantic queries ("companies with ESG risk") simultaneously.</div>
+                  </div>
+                  <div>
+                    <p className="text-sm font-semibold text-gray-900 dark:text-white mb-2">Reranking as Standard</p>
+                    <p className="text-xs text-gray-600 dark:text-gray-400 mb-2">Retrieve 20 candidates, rerank to top 5 with a cross-encoder (Cohere Rerank 3, BGE Reranker). Dramatically improves precision with minimal latency overhead (~100ms). Cohere Rerank 3 supports 100+ languages.</p>
+                    <div className="rounded-lg bg-emerald-50 p-2 dark:bg-emerald-900/20 text-xs text-emerald-800 dark:text-emerald-300">Finance: critical for regulatory Q&A where retrieving the wrong clause is worse than retrieving nothing.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
           {/* Navigation Footer */}
           <div className="mt-16 flex items-center justify-between rounded-3xl border border-gray-200/50 bg-white/60 p-8 backdrop-blur-sm dark:border-gray-700/50 dark:bg-gray-800/60">
             <a

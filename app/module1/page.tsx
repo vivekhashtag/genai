@@ -4929,6 +4929,121 @@ mask = mask.masked_fill(mask == 1, 0.0)
           </section>
         </div>
 
+        {/* ═══════ LATEST ADVANCEMENTS ═══════ */}
+        <section className="mb-16 mt-16">
+          <div className="mb-8 flex items-center gap-4">
+            <div className="rounded-full bg-gradient-to-r from-purple-600 to-pink-500 px-5 py-1.5 text-xs font-bold text-white shadow-lg">2025 – 2026 Updates</div>
+            <h2 className="text-3xl font-bold text-gray-900 dark:text-white">Latest Advancements in Foundation Models</h2>
+          </div>
+          <div className="rounded-3xl border-2 border-purple-200 bg-gradient-to-br from-purple-50 to-pink-50 p-8 shadow-xl dark:border-purple-700/50 dark:from-purple-950/30 dark:to-pink-950/30">
+            <p className="mb-8 text-gray-700 dark:text-gray-300">The foundation model landscape has shifted dramatically. Here is what every practitioner needs to know today.</p>
+
+            {/* Reasoning Models */}
+            <div className="mb-8 rounded-2xl border border-purple-200 bg-white p-6 shadow-sm dark:border-purple-700/40 dark:bg-gray-800">
+              <div className="mb-4 flex items-center gap-3">
+                <span className="rounded-full bg-purple-600 px-3 py-1 text-xs font-bold text-white">Paradigm Shift</span>
+                <h3 className="text-xl font-bold text-purple-700 dark:text-purple-400">The Reasoning Model Revolution</h3>
+              </div>
+              <p className="mb-4 text-gray-700 dark:text-gray-300">A new class of models — called <strong>reasoning models</strong> — emerged in late 2024 and changed how we think about model capabilities. Instead of answering immediately, they spend extra compute <em>thinking</em> before responding (test-time compute).</p>
+              <div className="mb-4 grid gap-4 md:grid-cols-2">
+                {[
+                  { model: "OpenAI o1 / o3 / o4-mini", desc: "OpenAI's reasoning series. o3 achieves near-human performance on graduate-level science and advanced math. o4-mini is fast and cheap." },
+                  { model: "Claude Extended Thinking", desc: "Anthropic's Claude 3.5/4.x with thinking mode: the model shows its reasoning chain. Excellent for multi-step compliance and legal analysis." },
+                  { model: "DeepSeek-R1", desc: "Open-weights Chinese reasoning model matching o1-level performance at a fraction of the cost. Shook the market in early 2025." },
+                  { model: "Google Gemini 2.5 Pro", desc: "Google's reasoning model with 1M-token context. Strong on code, science, and multimodal reasoning." },
+                ].map((m) => (
+                  <div key={m.model} className="rounded-xl bg-purple-50 p-4 dark:bg-purple-900/20">
+                    <div className="mb-1 font-bold text-purple-700 dark:text-purple-400 text-sm">{m.model}</div>
+                    <p className="text-xs text-gray-600 dark:text-gray-400">{m.desc}</p>
+                  </div>
+                ))}
+              </div>
+              <div className="rounded-xl bg-amber-50 border border-amber-200 p-4 dark:bg-amber-900/20 dark:border-amber-700/40">
+                <p className="font-semibold text-amber-800 dark:text-amber-300 text-sm mb-1">Finance Impact</p>
+                <p className="text-xs text-amber-900 dark:text-amber-200">Reasoning models excel at multi-step financial analysis: "Given this 10-K, calculate the debt coverage ratio, compare it to the industry average, and flag any covenant risks." Tasks that used to require Chain-of-Thought prompting now just need a clear goal statement.</p>
+              </div>
+            </div>
+
+            {/* Context Window Explosion */}
+            <div className="mb-8 rounded-2xl border border-purple-200 bg-white p-6 shadow-sm dark:border-purple-700/40 dark:bg-gray-800">
+              <div className="mb-4 flex items-center gap-3">
+                <span className="rounded-full bg-pink-600 px-3 py-1 text-xs font-bold text-white">Game Changer</span>
+                <h3 className="text-xl font-bold text-purple-700 dark:text-purple-400">Context Window Explosion</h3>
+              </div>
+              <p className="mb-4 text-gray-700 dark:text-gray-300">Context windows have grown 100× in two years, fundamentally changing what's possible without RAG.</p>
+              <div className="mb-4 overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead><tr className="bg-purple-100 dark:bg-purple-900/40">
+                    <th className="p-3 text-left font-bold text-purple-800 dark:text-purple-300">Model</th>
+                    <th className="p-3 text-left font-bold text-purple-800 dark:text-purple-300">Context Window</th>
+                    <th className="p-3 text-left font-bold text-purple-800 dark:text-purple-300">What Fits</th>
+                  </tr></thead>
+                  <tbody className="divide-y divide-purple-100 dark:divide-purple-900/30">
+                    {[
+                      ["GPT-3.5 (2022)","4K tokens","~3 pages"],
+                      ["GPT-4 Turbo","128K tokens","~100 pages / a short book"],
+                      ["Claude 3.5/4.x","200K tokens","~150 pages / a full annual report"],
+                      ["Gemini 2.0/2.5 Flash","1M tokens","~750 pages / an entire regulatory handbook"],
+                    ].map(([model,ctx,fit]) => (
+                      <tr key={model} className="bg-white dark:bg-gray-900/30">
+                        <td className="p-3 font-semibold text-gray-900 dark:text-white">{model}</td>
+                        <td className="p-3 font-mono text-purple-700 dark:text-purple-400">{ctx}</td>
+                        <td className="p-3 text-gray-600 dark:text-gray-400">{fit}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-sm text-gray-600 dark:text-gray-400">Implication: for many financial document tasks (single annual report Q&A, one regulatory circular), you can now load the entire document into context instead of building a RAG pipeline. RAG still wins for large corpora, freshness, access control, and cost at scale.</p>
+            </div>
+
+            {/* Model Landscape 2025-2026 */}
+            <div className="mb-8 rounded-2xl border border-purple-200 bg-white p-6 shadow-sm dark:border-purple-700/40 dark:bg-gray-800">
+              <h3 className="mb-4 text-xl font-bold text-purple-700 dark:text-purple-400">Model Landscape Update (2025–2026)</h3>
+              <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                {[
+                  { vendor: "Anthropic", models: "Claude Haiku 4.5, Sonnet 4.6, Opus 4.8", note: "Best for nuanced reasoning, safety-critical finance apps." },
+                  { vendor: "OpenAI", models: "GPT-4o, o3, o4-mini", note: "o3 for hard problems; o4-mini for cost-efficient reasoning at scale." },
+                  { vendor: "Google", models: "Gemini 2.0/2.5 Flash, Pro, Ultra", note: "Best multimodal capabilities; Flash is very cost-efficient." },
+                  { vendor: "Meta (Open)", models: "Llama 4 Scout, Maverick", note: "Open weights; deploy in your own infrastructure for data control." },
+                  { vendor: "DeepSeek (Open)", models: "DeepSeek-V3, DeepSeek-R1", note: "Competitive with frontier models; open weights; cost disruption." },
+                  { vendor: "Microsoft", models: "Phi-4 (14B)", note: "Small but capable; runs on-device; no data leaves the endpoint." },
+                ].map((v) => (
+                  <div key={v.vendor} className="rounded-xl bg-purple-50 p-4 dark:bg-purple-900/20">
+                    <div className="mb-1 font-bold text-purple-700 dark:text-purple-400 text-sm">{v.vendor}</div>
+                    <div className="mb-1 text-xs font-mono text-gray-800 dark:text-gray-300">{v.models}</div>
+                    <p className="text-xs text-gray-500 dark:text-gray-400">{v.note}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Small Models + Multimodal */}
+            <div className="grid gap-6 md:grid-cols-2">
+              <div className="rounded-2xl border border-purple-200 bg-white p-6 shadow-sm dark:border-purple-700/40 dark:bg-gray-800">
+                <h3 className="mb-3 text-lg font-bold text-purple-700 dark:text-purple-400">Small Language Models (SLMs)</h3>
+                <p className="mb-3 text-sm text-gray-700 dark:text-gray-300">Phi-4 (14B), Gemma 3 (27B), Llama 3.2 (3B/11B) prove you don't need a massive model for every task.</p>
+                <ul className="space-y-2 text-xs text-gray-600 dark:text-gray-400">
+                  <li className="flex gap-2"><span className="text-purple-500 font-bold">•</span>Run entirely on-device (laptop, mobile, edge server)</li>
+                  <li className="flex gap-2"><span className="text-purple-500 font-bold">•</span>No data leaves your environment — critical for MNPI handling</li>
+                  <li className="flex gap-2"><span className="text-purple-500 font-bold">•</span>Faster and cheaper for high-volume, simple tasks</li>
+                  <li className="flex gap-2"><span className="text-purple-500 font-bold">•</span>Finance use: document classification, PII detection, form parsing</li>
+                </ul>
+              </div>
+              <div className="rounded-2xl border border-purple-200 bg-white p-6 shadow-sm dark:border-purple-700/40 dark:bg-gray-800">
+                <h3 className="mb-3 text-lg font-bold text-purple-700 dark:text-purple-400">Multimodal Becomes Standard</h3>
+                <p className="mb-3 text-sm text-gray-700 dark:text-gray-300">Every frontier model now handles text + images natively. Some handle audio and video too.</p>
+                <ul className="space-y-2 text-xs text-gray-600 dark:text-gray-400">
+                  <li className="flex gap-2"><span className="text-pink-500 font-bold">•</span>GPT-4o: real-time text + vision + audio in one model</li>
+                  <li className="flex gap-2"><span className="text-pink-500 font-bold">•</span>Gemini 2.0: text + vision + audio + video + code execution</li>
+                  <li className="flex gap-2"><span className="text-pink-500 font-bold">•</span>Finance use: read earnings slides directly, analyze portfolio charts, process scanned regulatory forms</li>
+                  <li className="flex gap-2"><span className="text-pink-500 font-bold">•</span>No more OCR pipelines for standard document types</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Navigation Footer */}
         <div className="mt-16 flex items-center justify-between rounded-3xl border border-gray-200/50 bg-white/60 p-8 backdrop-blur-sm dark:border-gray-700/50 dark:bg-gray-800/60">
           <a

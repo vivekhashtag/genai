@@ -8319,6 +8319,119 @@ user_proxy.initiate_chat(
             </div>
           </section>
 
+          {/* ═══════ LATEST ADVANCEMENTS ═══════ */}
+          <section className="mb-16 mt-16">
+            <div className="mb-8 flex items-center gap-4">
+              <div className="rounded-full bg-gradient-to-r from-orange-500 to-red-500 px-5 py-1.5 text-xs font-bold text-white shadow-lg">2025 – 2026 Updates</div>
+              <h2 className="text-3xl font-bold text-gray-900 dark:text-white">Latest Advancements in AI Agents</h2>
+            </div>
+            <div className="rounded-3xl border-2 border-orange-200 bg-gradient-to-br from-orange-50 to-red-50 p-8 shadow-xl dark:border-orange-700/50 dark:from-orange-950/30 dark:to-red-950/30">
+              <p className="mb-8 text-gray-700 dark:text-gray-300">AI agents moved from research curiosity to production reality in 2024–2025. Computer use, standardised protocols, and voice capabilities have opened entirely new categories of automation.</p>
+
+              {/* Computer Use */}
+              <div className="mb-8 rounded-2xl border border-orange-200 bg-white p-6 shadow-sm dark:border-orange-700/40 dark:bg-gray-800">
+                <div className="mb-4 flex items-center gap-3">
+                  <span className="rounded-full bg-orange-600 px-3 py-1 text-xs font-bold text-white">Breakthrough 2024</span>
+                  <h3 className="text-xl font-bold text-orange-700 dark:text-orange-400">Computer Use & GUI Agents</h3>
+                </div>
+                <p className="mb-4 text-gray-700 dark:text-gray-300">Agents can now operate computers like a human — taking screenshots, clicking, typing, and navigating UIs. This unlocks automation of any system with a graphical interface, including legacy systems with no API.</p>
+                <div className="mb-4 grid gap-3 md:grid-cols-3">
+                  {[
+                    { product: "Claude Computer Use", vendor: "Anthropic, Oct 2024", desc: "Screenshot → analyse → click/type. First mainstream computer use API. Can operate any desktop app or web browser." },
+                    { product: "OpenAI Operator", vendor: "OpenAI, Jan 2025", desc: "Web automation agent built into ChatGPT. Books restaurants, fills forms, completes multi-step web tasks autonomously." },
+                    { product: "Google Project Mariner", vendor: "Google DeepMind, 2024", desc: "Browser agent built into Chrome. Can navigate and interact with any website." },
+                  ].map((p) => (
+                    <div key={p.product} className="rounded-xl bg-orange-50 p-4 dark:bg-orange-900/20">
+                      <div className="font-bold text-orange-700 dark:text-orange-400 text-sm">{p.product}</div>
+                      <div className="text-xs text-gray-500 dark:text-gray-400 mb-1">{p.vendor}</div>
+                      <p className="text-xs text-gray-600 dark:text-gray-400">{p.desc}</p>
+                    </div>
+                  ))}
+                </div>
+                <div className="rounded-xl bg-amber-50 border border-amber-200 p-4 dark:bg-amber-900/20 dark:border-amber-700/40">
+                  <p className="font-semibold text-amber-800 dark:text-amber-300 text-sm mb-1">Finance Use Cases</p>
+                  <ul className="space-y-1 text-xs text-amber-900 dark:text-amber-200">
+                    <li>• Automate data entry into legacy core banking systems with no API</li>
+                    <li>• Navigate regulatory portals (SEBI, RBI, MCA) to file submissions</li>
+                    <li>• Extract data from third-party portals that only provide a web interface</li>
+                    <li>• Automate reconciliation workflows across disparate trading systems</li>
+                  </ul>
+                </div>
+              </div>
+
+              {/* MCP + A2A */}
+              <div className="mb-8 grid gap-6 md:grid-cols-2">
+                <div className="rounded-2xl border border-orange-200 bg-white p-6 shadow-sm dark:border-orange-700/40 dark:bg-gray-800">
+                  <div className="mb-3 flex items-center gap-2">
+                    <span className="rounded-full bg-red-600 px-2 py-0.5 text-xs font-bold text-white">Standard</span>
+                    <h3 className="text-lg font-bold text-orange-700 dark:text-orange-400">MCP — The Standard Has Arrived</h3>
+                  </div>
+                  <p className="mb-3 text-sm text-gray-700 dark:text-gray-300">Announced by Anthropic in November 2024, MCP has been rapidly adopted across the industry. It's no longer experimental — it's the standard.</p>
+                  <ul className="space-y-1 text-xs text-gray-600 dark:text-gray-400">
+                    <li className="flex gap-2"><span className="text-orange-500 font-bold">•</span>Cursor, Windsurf, Claude Desktop, VS Code — all support MCP natively</li>
+                    <li className="flex gap-2"><span className="text-orange-500 font-bold">•</span>100s of community MCP servers: GitHub, Slack, databases, browsers</li>
+                    <li className="flex gap-2"><span className="text-orange-500 font-bold">•</span>Finance: internal MCP servers for Bloomberg data, trading systems, client CRM, risk engines</li>
+                    <li className="flex gap-2"><span className="text-orange-500 font-bold">•</span>Build once, use with any MCP-compatible agent framework</li>
+                  </ul>
+                </div>
+                <div className="rounded-2xl border border-orange-200 bg-white p-6 shadow-sm dark:border-orange-700/40 dark:bg-gray-800">
+                  <div className="mb-3 flex items-center gap-2">
+                    <span className="rounded-full bg-orange-600 px-2 py-0.5 text-xs font-bold text-white">Google 2025</span>
+                    <h3 className="text-lg font-bold text-orange-700 dark:text-orange-400">A2A — Agent-to-Agent Protocol</h3>
+                  </div>
+                  <p className="mb-3 text-sm text-gray-700 dark:text-gray-300">Google's <strong>Agent-to-Agent (A2A) Protocol</strong> complements MCP by standardising how agents communicate with other agents — not just tools.</p>
+                  <ul className="space-y-1 text-xs text-gray-600 dark:text-gray-400">
+                    <li className="flex gap-2"><span className="text-red-500 font-bold">•</span>MCP = agent ↔ tools/data. A2A = agent ↔ agent</li>
+                    <li className="flex gap-2"><span className="text-red-500 font-bold">•</span>Agents from different vendors can interoperate</li>
+                    <li className="flex gap-2"><span className="text-red-500 font-bold">•</span>Agent discovery: find available agents and their capabilities</li>
+                    <li className="flex gap-2"><span className="text-red-500 font-bold">•</span>Finance: compliance agent delegates KYC sub-task to a specialist KYC agent</li>
+                  </ul>
+                </div>
+              </div>
+
+              {/* Voice Agents + Memory */}
+              <div className="mb-8 grid gap-6 md:grid-cols-2">
+                <div className="rounded-2xl border border-orange-200 bg-white p-6 shadow-sm dark:border-orange-700/40 dark:bg-gray-800">
+                  <h3 className="mb-3 text-lg font-bold text-orange-700 dark:text-orange-400">Voice Agents — Real-Time</h3>
+                  <p className="mb-3 text-sm text-gray-700 dark:text-gray-300">OpenAI's <strong>Real-Time API</strong> enables sub-300ms speech-to-speech AI — no transcription step, natural conversation with interruptions and tone understanding.</p>
+                  <ul className="space-y-1 text-xs text-gray-600 dark:text-gray-400">
+                    <li className="flex gap-2"><span className="text-orange-500 font-bold">•</span>Natural conversation pace — no 2–3 second pauses for transcription + LLM + TTS</li>
+                    <li className="flex gap-2"><span className="text-orange-500 font-bold">•</span>Understands tone and emotion — adapts response style</li>
+                    <li className="flex gap-2"><span className="text-orange-500 font-bold">•</span>Finance: voice-enabled advisor assistant, client call summaries in real time, voice-driven trading queries</li>
+                  </ul>
+                </div>
+                <div className="rounded-2xl border border-orange-200 bg-white p-6 shadow-sm dark:border-orange-700/40 dark:bg-gray-800">
+                  <h3 className="mb-3 text-lg font-bold text-orange-700 dark:text-orange-400">Agent Memory Standards</h3>
+                  <p className="mb-3 text-sm text-gray-700 dark:text-gray-300">Persistent memory across sessions is becoming standardised with libraries like <strong>Mem0</strong> and <strong>LangMem</strong>.</p>
+                  <ul className="space-y-1 text-xs text-gray-600 dark:text-gray-400">
+                    <li className="flex gap-2"><span className="text-red-500 font-bold">•</span>Remember client preferences, risk tolerance, past decisions across sessions</li>
+                    <li className="flex gap-2"><span className="text-red-500 font-bold">•</span>Automatic memory consolidation — summarise old memories, keep what matters</li>
+                    <li className="flex gap-2"><span className="text-red-500 font-bold">•</span>Memory search: retrieve relevant past interactions for the current context</li>
+                    <li className="flex gap-2"><span className="text-red-500 font-bold">•</span>Privacy controls: per-user memory isolation, right-to-delete support</li>
+                  </ul>
+                </div>
+              </div>
+
+              {/* Framework Updates */}
+              <div className="rounded-2xl border border-orange-200 bg-white p-6 shadow-sm dark:border-orange-700/40 dark:bg-gray-800">
+                <h3 className="mb-3 text-lg font-bold text-orange-700 dark:text-orange-400">Agent Frameworks — Maturing Fast</h3>
+                <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+                  {[
+                    { name: "LangGraph 0.2+", desc: "Production-grade with persistence, streaming, human-in-the-loop, and a cloud platform (LangGraph Cloud) for deployment." },
+                    { name: "AutoGen 0.4", desc: "Microsoft's actor-model rewrite — distributed, async, more reliable for complex multi-agent workflows." },
+                    { name: "OpenAI Swarm", desc: "Lightweight experimental framework for handoff between specialized agents. Elegant for simple orchestration." },
+                    { name: "Claude Agents SDK", desc: "Anthropic's official SDK for building agents with Claude — includes tool use, computer use, and MCP integration." },
+                  ].map((f) => (
+                    <div key={f.name} className="rounded-xl bg-orange-50 p-4 dark:bg-orange-900/20">
+                      <div className="font-bold text-orange-700 dark:text-orange-400 text-sm mb-1">{f.name}</div>
+                      <p className="text-xs text-gray-600 dark:text-gray-400">{f.desc}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </section>
+
           {/* Navigation Footer */}
           <div className="mt-16 flex items-center justify-between rounded-3xl border border-gray-200/50 bg-white/60 p-8 backdrop-blur-sm dark:border-gray-700/50 dark:bg-gray-800/60">
             <a

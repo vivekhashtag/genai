@@ -109,6 +109,61 @@ export default function Home() {
         "Data privacy & consent in AI systems",
       ],
     },
+    {
+      number: "06",
+      title: "AI & GenAI Security",      subtitle: "Securing LLM systems from attack to governance",
+      color: "from-rose-600 to-red-500",
+      bgColor: "bg-rose-50 dark:bg-rose-950/20",
+      icon: "🛡️",
+      link: "/module6",
+      topics: [
+        "OWASP Top 10 for LLM Applications (2025) — all 10 risks with bank examples",
+        "Prompt injection deep dive: attack techniques and 8-layer defenses",
+        "Adversarial ML & MITRE ATLAS: evasion, poisoning, model extraction",
+        "Guardrails, content safety & the enterprise LLM gateway",
+        "Data privacy: PII protection, tenant isolation, data residency",
+        "Securing RAG pipelines & AI agents: permission-aware retrieval, MCP security",
+        "Governance: NIST AI RMF, ISO 42001, EU AI Act, SR 11-7",
+        "AI red teaming with PyRIT, Garak, promptfoo — CI/CD security pipelines",
+      ],
+    },
+    {
+      number: "07",
+      title: "AI Frontier",
+      subtitle: "State of the art — updated continuously",
+      color: "from-violet-600 to-fuchsia-500",
+      bgColor: "bg-violet-50 dark:bg-violet-950/20",
+      icon: "🚀",
+      link: "/module7",
+      topics: [
+        "Multimodal AI — the new default across text, vision, audio, video",
+        "On-device AI: privacy-first architecture for sensitive financial data",
+        "AI in production: evals, model routing, observability, cost accountability",
+        "Open vs closed models — 2026 decision framework for finance",
+        "The agentic internet: autonomous workflows and governance challenges",
+        "AI & the finance workforce — honest assessment of what changes",
+        "What's next: signals to watch in the next 12–18 months",
+      ],
+    },
+    {
+      number: "08",
+      title: "AI Observability, Evaluation & Tracing",
+      subtitle: "Measure, monitor, and improve AI in production",
+      color: "from-sky-600 to-cyan-500",
+      bgColor: "bg-sky-50 dark:bg-sky-950/20",
+      icon: "📡",
+      link: "/module8",
+      topics: [
+        "The three pillars: traces, metrics, and logs for AI systems",
+        "Evaluation (evals): types, LLM-as-judge, golden sets, regression testing",
+        "LangSmith: tracing, datasets, eval runs, annotation queues",
+        "Azure AI Foundry evaluators, Azure Monitor, Prompt Flow",
+        "AWS Bedrock: CloudWatch, X-Ray, SageMaker Clarify",
+        "GCP Vertex AI Evaluation Service and Cloud Monitoring",
+        "Open-source: Langfuse, W&B Weave, Phoenix, Helicone, OpenTelemetry",
+        "Finance: PII in logs, SR 11-7 evidence, audit trails, cost attribution",
+      ],
+    },
   ];
 
   return (
@@ -139,7 +194,7 @@ export default function Home() {
           {/* Stats Bar */}
           <div className="mx-auto mt-12 flex max-w-3xl flex-wrap justify-center gap-8">
             <div className="text-center">
-              <div className="text-4xl font-bold text-blue-600 dark:text-blue-400">6</div>
+              <div className="text-4xl font-bold text-blue-600 dark:text-blue-400">9</div>
               <div className="text-sm text-gray-600 dark:text-gray-400">Modules</div>
             </div>
             <div className="text-center">
