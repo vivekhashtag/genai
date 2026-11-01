@@ -13,9 +13,22 @@ const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
 });
 
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ??
+  (process.env.VERCEL_PROJECT_PRODUCTION_URL
+    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+    : "https://genai-by-vivek.vercel.app");
+
+const title = "Gen AI for Finance: A Hands-On Course";
+const description =
+  "9 modules and 8 hands-on labs on Foundation Models, Prompt Engineering, RAG, AI Agents, Governance, Security and Observability, built for banking and financial services.";
+
 export const metadata: Metadata = {
-  title: "Gen AI Course - Master Generative AI for Finance",
-  description: "Comprehensive course covering Foundation Models, Prompt Engineering, Embeddings, AI Agents, and Governance with a focus on financial applications",
+  metadataBase: new URL(siteUrl),
+  title,
+  description,
+  openGraph: { title, description, type: "website", siteName: "Gen AI for Finance" },
+  twitter: { card: "summary_large_image", title, description },
 };
 
 export default function RootLayout({

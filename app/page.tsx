@@ -303,6 +303,20 @@ export default function Home() {
           </span>
         </Link>
 
+        {/* Work With Me */}
+        <div className="mx-auto mt-16 max-w-3xl rounded-3xl border border-indigo-300/50 bg-white/70 p-8 text-center shadow-xl backdrop-blur-sm dark:border-indigo-600/40 dark:bg-gray-800/60">
+          <h3 className="mb-3 text-2xl font-bold text-gray-900 dark:text-white">Work With Me</h3>
+          <p className="mb-6 text-gray-600 dark:text-gray-300">
+            Corporate training, GenAI strategy reviews, and AI security or governance assessments for banks and financial institutions.
+          </p>
+          <a
+            href="mailto:reachvivekd@gmail.com?subject=Consulting%20inquiry%20%E2%80%93%20Gen%20AI%20for%20Finance&body=Name%3A%0AOrganisation%3A%0AWhat%20do%20you%20need%20help%20with%3F%0A"
+            className="inline-block rounded-full bg-gradient-to-r from-indigo-600 to-violet-600 px-8 py-3 font-semibold text-white shadow-xl transition-all hover:scale-105"
+          >
+            Get in touch
+          </a>
+        </div>
+
         {/* Footer Section */}
         <div className="mt-20 rounded-3xl border border-gray-200/50 bg-white/60 p-12 text-center shadow-xl backdrop-blur-sm dark:border-gray-700/50 dark:bg-gray-800/60">
           <h3 className="mb-4 text-3xl font-bold text-gray-900 dark:text-white">
