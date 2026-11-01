@@ -4206,8 +4206,23 @@ export default function Module2() {
           </div>
         </section>
 
+        {/* Lab callout */}
+        <div className="mt-16 flex flex-col items-center gap-4 rounded-3xl border border-amber-300/60 bg-gradient-to-r from-amber-50 to-yellow-50 p-8 text-center shadow-lg dark:border-amber-600/40 dark:from-amber-950/30 dark:to-yellow-950/30 sm:flex-row sm:text-left">
+          <div className="text-4xl">🧪</div>
+          <div className="flex-1">
+            <div className="text-lg font-bold text-gray-900 dark:text-white">Try Lab 2: Financial Prompt Library</div>
+            <div className="text-sm text-gray-700 dark:text-gray-300">Build five versioned prompt templates, compare zero-shot, few-shot and chain-of-thought, and measure prompt caching. About 60 minutes.</div>
+          </div>
+          <a
+            href="/labs/lab2"
+            className="rounded-full bg-gradient-to-r from-amber-500 to-yellow-500 px-6 py-2.5 text-sm font-semibold text-white shadow-lg"
+          >
+            Try the Lab →
+          </a>
+        </div>
+
         {/* Navigation Footer */}
-        <div className="mt-16 flex items-center justify-between rounded-3xl border border-gray-200/50 bg-white/60 p-8 backdrop-blur-sm dark:border-gray-700/50 dark:bg-gray-800/60">
+        <div className="mt-8 flex items-center justify-between rounded-3xl border border-gray-200/50 bg-white/60 p-8 backdrop-blur-sm dark:border-gray-700/50 dark:bg-gray-800/60">
           <a
             href="/module1"
             className="flex items-center font-semibold text-gray-600 transition-colors hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400"

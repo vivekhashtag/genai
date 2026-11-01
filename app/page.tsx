@@ -198,6 +198,10 @@ export default function Home() {
               <div className="text-sm text-gray-600 dark:text-gray-400">Modules</div>
             </div>
             <div className="text-center">
+              <div className="text-4xl font-bold text-amber-600 dark:text-amber-400">8</div>
+              <div className="text-sm text-gray-600 dark:text-gray-400">Labs</div>
+            </div>
+            <div className="text-center">
               <div className="text-4xl font-bold text-indigo-600 dark:text-indigo-400">40+</div>
               <div className="text-sm text-gray-600 dark:text-gray-400">Topics</div>
             </div>
@@ -281,6 +285,23 @@ export default function Home() {
             </Link>
           ))}
         </div>
+
+        {/* Labs Banner */}
+        <Link
+          href="/labs"
+          className="group mx-auto mt-16 flex max-w-3xl flex-col items-center gap-3 rounded-3xl border border-amber-300/60 bg-gradient-to-r from-amber-50 to-yellow-50 p-6 text-center shadow-xl transition-all hover:scale-[1.02] dark:border-amber-600/40 dark:from-amber-950/30 dark:to-yellow-950/30 sm:flex-row sm:text-left"
+        >
+          <div className="text-4xl">🧪</div>
+          <div className="flex-1">
+            <div className="text-lg font-bold text-gray-900 dark:text-white">Hands-On Labs</div>
+            <div className="text-sm text-gray-700 dark:text-gray-300">
+              Build one Financial Intelligence Assistant across 8 labs: RAG, agents, guardrails, observability.
+            </div>
+          </div>
+          <span className="rounded-full bg-gradient-to-r from-amber-500 to-yellow-500 px-5 py-2 text-sm font-semibold text-white shadow-lg">
+            Explore Labs →
+          </span>
+        </Link>
 
         {/* Footer Section */}
         <div className="mt-20 rounded-3xl border border-gray-200/50 bg-white/60 p-12 text-center shadow-xl backdrop-blur-sm dark:border-gray-700/50 dark:bg-gray-800/60">

@@ -579,8 +579,25 @@ def audit_log(prompt, response, metadata):
           </div>
         </section>
 
+        {/* Lab callout */}
+        <div className="mt-12 flex flex-col items-center gap-4 rounded-3xl border border-amber-300/60 bg-gradient-to-r from-amber-50 to-yellow-50 p-8 text-center shadow-lg dark:border-amber-600/40 dark:from-amber-950/30 dark:to-yellow-950/30 sm:flex-row sm:text-left">
+          <div className="text-4xl">🧪</div>
+          <div className="flex-1">
+            <div className="text-lg font-bold text-gray-900 dark:text-white">Try Lab 7: Observability &amp; Evaluation Stack</div>
+            <div className="text-sm text-gray-700 dark:text-gray-300">
+              Trace a RAG assistant, score it on a 20-question golden set with an LLM judge, and set release gates. Optional Langfuse step. About 90 minutes.
+            </div>
+          </div>
+          <Link
+            href="/labs/lab7"
+            className="rounded-full bg-gradient-to-r from-amber-500 to-yellow-500 px-6 py-2.5 text-sm font-semibold text-white shadow-lg"
+          >
+            Try the Lab →
+          </Link>
+        </div>
+
         {/* Footer */}
-        <div className="mt-12 flex items-center justify-between rounded-3xl border border-sky-200/60 bg-white/70 p-6 shadow-xl backdrop-blur-sm dark:border-sky-700/40 dark:bg-gray-800/70">
+        <div className="mt-8 flex items-center justify-between rounded-3xl border border-sky-200/60 bg-white/70 p-6 shadow-xl backdrop-blur-sm dark:border-sky-700/40 dark:bg-gray-800/70">
           <Link href="/module7" className="inline-flex items-center gap-2 rounded-full border border-sky-200 bg-white px-5 py-2.5 text-sm font-medium text-sky-700 shadow-sm transition-all hover:bg-sky-50 dark:border-sky-700 dark:bg-gray-800 dark:text-sky-300">
             ← Module 07: AI Frontier
           </Link>

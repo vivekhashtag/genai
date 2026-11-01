@@ -1291,8 +1291,25 @@ scorer = SubStringScorer(substring="CANARY-7f3a91", category="leak")
           </div>
         </section>
 
+        {/* Lab callout */}
+        <div className="mt-12 flex flex-col items-center gap-4 rounded-3xl border border-amber-300/60 bg-gradient-to-r from-amber-50 to-yellow-50 p-8 text-center shadow-lg dark:border-amber-600/40 dark:from-amber-950/30 dark:to-yellow-950/30 sm:flex-row sm:text-left">
+          <div className="text-4xl">🧪</div>
+          <div className="flex-1">
+            <div className="text-lg font-bold text-gray-900 dark:text-white">Try Lab 6: Security Guardrail Layer</div>
+            <div className="text-sm text-gray-700 dark:text-gray-300">
+              Attack a small bank assistant, then add Presidio, spotlighting and injection detection, and measure what each layer stops. About 75 minutes.
+            </div>
+          </div>
+          <Link
+            href="/labs/lab6"
+            className="rounded-full bg-gradient-to-r from-amber-500 to-yellow-500 px-6 py-2.5 text-sm font-semibold text-white shadow-lg"
+          >
+            Try the Lab →
+          </Link>
+        </div>
+
         {/* Footer */}
-        <div className="mt-12 flex items-center justify-between rounded-3xl border border-rose-200/60 bg-white/70 p-6 shadow-xl backdrop-blur-sm dark:border-rose-700/40 dark:bg-gray-800/70">
+        <div className="mt-8 flex items-center justify-between rounded-3xl border border-rose-200/60 bg-white/70 p-6 shadow-xl backdrop-blur-sm dark:border-rose-700/40 dark:bg-gray-800/70">
           <Link href="/module5" className="inline-flex items-center gap-2 rounded-full border border-rose-200 bg-white px-5 py-2.5 text-sm font-medium text-rose-700 shadow-sm transition-all hover:bg-rose-50 dark:border-rose-700 dark:bg-gray-800 dark:text-rose-300">
             ← Module 05: Governance
           </Link>

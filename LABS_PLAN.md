@@ -116,6 +116,57 @@ Each lab page contains:
 
 ---
 
+## Build Progress
+
+- ✅ `/app/labs/page.tsx` — Labs Hub (amber theme `from-amber-500 to-yellow-500`), linked from homepage banner; homepage stats now show 8 Labs
+- ✅ `/app/labs/lab3/page.tsx` + `public/labs/lab3_regulatory_rag.ipynb`
+- ✅ `/app/labs/lab4/page.tsx` + `public/labs/lab4_research_agent.ipynb` (6 providers: Ollama, Groq, Gemini, OpenRouter, OpenAI, Anthropic)
+- ✅ `/app/labs/lab6/page.tsx` + `public/labs/lab6_security_guardrails.ipynb` (in-memory docs; Presidio + custom Indian PII recognizers, spotlighting, rules + optional LLM Guard, attack suite with ablation; garak left as stretch because its REST config format varies by version)
+- ✅ `/app/labs/lab7/page.tsx` + `public/labs/lab7_observability_evals.ipynb` (own Trace/span class, 20-question golden set from the SEBI memo, LLM-judge groundedness, p50/p95/cost gates, k=4 vs k=1 regression test, optional Langfuse via v3 SDK). Deviations from the original spec: DeepEval is a stretch goal instead of core (the hand-built judge teaches the mechanism with no extra dependency); Langfuse is optional with Cloud and Docker paths because self-hosting is not a one-command setup. Token and cost figures are estimates.
+- ✅ Labs 0, 1, 2 and 5 built using a shared `app/labs/_components/LabPage.tsx` (Labs 3, 4, 6, 7 still use their own standalone page files and could be migrated to it).
+  - Lab 0 (`lab0_document_preprocessor.ipynb`): cleans/NER/TF-IDF on two real SEBI PDFs (adds `public/lab-data/sebi-retail-algo-trading-circular-feb2025.pdf`); no API key.
+  - Lab 1 (`lab1_model_comparison.ipynb`): fictional results note with a trap question, fact/honesty/invention scoring, temperature variability; includes a no-code route.
+  - Lab 2 (`lab2_prompt_library.ipynb`): five templates via `string.Template`, zero/few-shot/CoT on 8 credit cases with a hidden house rule, caching demo (Anthropic/OpenAI only), JSON library.
+  - Lab 5 (`lab5_bias_audit_model_card.ipynb`): synthetic data with planted bias (seed 42), 80% rule + equal-opportunity gap, SHAP (permutation fallback), reweighing, model card. Deviation: data generated in-notebook rather than shipped as a CSV.
+- ⏳ Remaining: commit/push so Colab links work; migrate Labs 3/4/6/7 to the shared component (optional); fix stale CLAUDE.md sections.
+- Colab links use `github/vivekhashtag/genai/blob/main/public/labs/...` (git root is genai-website). They 404 until the files are committed and pushed.
+- Lab pages 0–7 are linked from the hub but not built yet (they 404 until created)
+
+## Explanation Standard (decided)
+
+Every exercise in every lab must be explained well enough to be followed without outside help. For each exercise, the lab page and the Colab notebook include:
+
+1. **Why we do this:** the goal, and the module concept it practises (link to the module section).
+2. **What the code does:** a plain-language walkthrough of each block, written before the code, not just comments inside it.
+3. **Key terms:** any new term defined on first use.
+4. **Expected output:** what correct looks like, and what to do if yours differs.
+5. **What to notice:** one or two observations to take away (e.g. why a chunk size changed retrieval quality).
+6. **Finance link:** why it matters in a regulated setting.
+
+Starter code with `# YOUR CODE HERE` blocks must carry a hint for each blank, plus a collapsible full solution.
+
+---
+
+## Provider Options (decided)
+
+Labs must work with any of: **Ollama** (local, free), **Groq** (hosted free tier, OpenAI-compatible API), **Anthropic Claude** (paid). Design rule: provider is one config cell at the top of each Colab notebook (a small `get_llm()` wrapper), and the rest of the code is provider-agnostic. Embeddings use Chroma's local default model so no key is needed. Agent labs (4, 6, 7) need a model with tool-calling support, so verify the chosen Ollama/Groq model supports it and name a tested default for each. Lab 1 is multi-provider by design.
+
+---
+
+## Lab 3 Public Documents (sources to record on the lab page)
+
+Use only publicly published documents, and record the exact URL and download date for each when the files are fetched. Not yet downloaded or verified.
+
+| Role | Candidate | Publisher |
+|---|---|---|
+| RBI circular | An RBI Master Direction or circular on digital lending / IT governance / model risk | rbi.org.in (Notifications) |
+| SEBI guideline | A SEBI circular on AI/ML usage or cybersecurity framework | sebi.gov.in (Legal > Circulars) |
+| Company report | Annual report of a listed Indian bank (e.g. HDFC Bank), which includes CRAR / LCR disclosures | Bank investor relations page |
+
+Decision: use an Indian bank annual report instead of a US 10-K, and change the Lab 4 test question from "current ratio" to CRAR or LCR vs the RBI minimum.
+
+---
+
 ## Starter Resources to Prepare
 
 - **3 pre-selected public documents** (RBI circular, SEBI guideline, public company annual report) — stored in `/public/lab-data/`
