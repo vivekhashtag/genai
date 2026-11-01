@@ -309,12 +309,12 @@ export default function Home() {
           <p className="mb-6 text-gray-600 dark:text-gray-300">
             Corporate training, GenAI strategy reviews, and AI security or governance assessments for banks and financial institutions.
           </p>
-          <a
-            href="mailto:reachvivekd@gmail.com?subject=Consulting%20inquiry%20%E2%80%93%20Gen%20AI%20for%20Finance&body=Name%3A%0AOrganisation%3A%0AWhat%20do%20you%20need%20help%20with%3F%0A"
+          <Link
+            href="/work-with-me"
             className="inline-block rounded-full bg-gradient-to-r from-indigo-600 to-violet-600 px-8 py-3 font-semibold text-white shadow-xl transition-all hover:scale-105"
           >
             Get in touch
-          </a>
+          </Link>
         </div>
 
         {/* Footer Section */}

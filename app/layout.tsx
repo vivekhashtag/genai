@@ -28,6 +28,7 @@ export const metadata: Metadata = {
   title,
   description,
   openGraph: { title, description, type: "website", siteName: "Gen AI for Finance" },
+  verification: { google: "j2BS-9riUXc4NKnvQKt1cOrEA2TyVWway3xL0I9pvDI" },
   twitter: { card: "summary_large_image", title, description },
 };
 
